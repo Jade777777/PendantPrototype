@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a49e2b069f484f4e9172b490a7fe11c, type: 3}
+  m_Name: DodgeState
+  m_EditorClassIdentifier: 
+  _moduleState: {fileID: 3313362663752202961, guid: 9e023b7ae4328a640b22e35126075937,
+    type: 3}
+  _state:
+  - {fileID: 0}
+  _decisionData:
+  - _prevState:
+    - {fileID: 11400000, guid: 29b4556f150664b459057bd9691c021c, type: 2}
+    _validInput:
+    - {fileID: 11400000, guid: 1825517df3a8cd64283d565b6de759a7, type: 2}
+    _decisionAlgorithms: []
+  _priority: 100
