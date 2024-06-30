@@ -9,6 +9,10 @@ namespace SoulsLike
     [RequireComponent(typeof(PlayerInput))]
     public class PlayerSoulInput : CharacterInput
     {
+        private void Update()
+        {
+            stateInstance.SetPlayerStatus(true);
+        }
         private new BaseSoulState stateInstance { get { return base.stateInstance as BaseSoulState; } } //This line allows us to handle input however we would like
         public void OnMove(InputValue input)
         {

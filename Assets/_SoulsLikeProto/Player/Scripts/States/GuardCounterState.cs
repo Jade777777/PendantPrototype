@@ -57,7 +57,10 @@ namespace SoulsLike
 
         private void LateUpdate()
         {
-            UpdateCamera();
+            if (IsPlayer)
+            {
+                UpdateCamera();
+            }
         }
 
 

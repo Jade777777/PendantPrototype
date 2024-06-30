@@ -7,10 +7,14 @@ namespace SoulsLike
 {
     public abstract class BaseSoulState : BehaviorInstance
     {
-        
+        protected bool IsPlayer;
         public virtual void OnMove(Vector2 Input)
         {
             Debug.Log(this + " does not use OnMove input.");
+        }
+        public virtual void SetPlayerStatus(bool isPlayer)
+        {
+            IsPlayer = isPlayer;
         }
         public virtual void OnDodge()
         {
