@@ -1,16 +1,15 @@
 using Mosaic;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 namespace SoulsLike
 {
     public abstract class BaseSoulState : BehaviorInstance
     {
+        [SerializeField]
+        BehaviorInputType _death;
         protected bool IsPlayer;
         public virtual void OnMove(Vector2 Input)
         {
-            Debug.Log(this + " does not use OnMove input.");
+            //Debug.Log(this + " does not use OnMove input.");
         }
         public virtual void SetPlayerStatus(bool isPlayer)
         {
@@ -18,47 +17,58 @@ namespace SoulsLike
         }
         public virtual void OnDodge()
         {
-            Debug.Log(this + " does not use OnDodge input.");
+            //Debug.Log(this + " does not use OnDodge input.");
         }
         public virtual void OnDash(bool IsActivated)
         {
-            Debug.Log(this + " does not use OnDash input.");
+           // Debug.Log(this + " does not use OnDash input.");
         }
         public virtual void OnLook(Vector2 mouseInput)
         {
-            Debug.Log(this + " does not use OnLook input.");
+            //Debug.Log(this + " does not use OnLook input.");
         }
 
         public virtual void OnLockOn()
         {
-            Debug.Log(this + " does not use OnLockOn input.");
+            //Debug.Log(this + " does not use OnLockOn input.");
         }
         public virtual void OnStandardAttack()
         {
-            Debug.Log(this + " does not use OnStandardAttack input.");
+           // Debug.Log(this + " does not use OnStandardAttack input.");
         }
         public virtual void OnHeavyAttack()
         {
-            Debug.Log(this + " does not use OnHeavyAttack input.");
+           // Debug.Log(this + " does not use OnHeavyAttack input.");
         }
         public virtual void OnGuard(bool isActivated)
         {
-            Debug.Log(this + " does not use OnGuard input.");
+           // Debug.Log(this + " does not use OnGuard input.");
         }
         public virtual void OnGuardCounter()
         {
-            Debug.Log(this + " does not use OnGuardCounter input.");
+           // Debug.Log(this + " does not use OnGuardCounter input.");
         }
         public virtual void OnUseItem()
         {
-            Debug.Log(this + " does not use OnUseItem input.");
+           // Debug.Log(this + " does not use OnUseItem input.");
         }
         public virtual void OnInteract()
         {
-            Debug.Log(this + " does not use OnInteract input.");
+           // Debug.Log(this + " does not use OnInteract input.");
         }
 
+        public virtual void TakeDamage()
+        {
+            DataTags.GetTag<CombatDataTag>().Health -= DataTags.GetTag<CombatDataTag>().WeaponDamage;
+            Debug.Log("Health: " + DataTags.GetTag<CombatDataTag>().Health);
+            if(DataTags.GetTag<CombatDataTag>().Health <= 0)
+            {
 
+                Debug.Log("Dead!");
+                Character.StateMachine.Transition(_death);
+            }
+            
+        }
         //protected void UpdatePosition()
         //{
         //    //While rotation and camera movement happen over time, movement seems to be linear

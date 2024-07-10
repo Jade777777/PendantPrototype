@@ -36,9 +36,9 @@ namespace SoulsLike
             if (distance > minDistance && distance < maxDistance && Time.time > attackTime + attackRate)
             {
                 stateInstance.OnMove(new Vector2(direction.x, direction.z));
-                Debug.Log("Moving towards target");
+
             }
-            else
+            else if(distance< maxDistance)
             {
                 stateInstance.OnMove( - new Vector2(direction.x, direction.z) *0.25f);
             }

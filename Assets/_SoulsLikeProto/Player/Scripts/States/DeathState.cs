@@ -4,39 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace SoulsLike
 {
-    public class HealState : BaseSoulState
+    public class DeathState : BaseSoulState
     {
-       
-        [SerializeField]
-        float _attackTime = 0.5f;
+
 
         [Header("Camera Settings")]
         [SerializeField]
         float cameraDistance = 1f;
         float minXAngle = -25;
         float maxXAngle = 70;
-        [SerializeField] 
-        BehaviorInputType _nextInput;
+
 
         protected override void OnEnter()
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            Invoke("EndDash", _attackTime);
-        }
-        private void EndDash()
-        {
-            Character.StateMachine.Transition(_nextInput);
-        }
-        protected override void OnExit()
-        {
-            DataTags.GetTag<CombatDataTag>().Health += 5;
+
         }
 
-        public override void OnMove(Vector2 Input)
-        {
-            DataTags.GetTag<MovementDataTag>().Direction = Input;
-        }
+
 
         public override void OnLook(Vector2 mouseInput)
         {
@@ -45,13 +31,13 @@ namespace SoulsLike
             Character.DataTags.GetTag<CameraDataTag>().YAngle += mouseInput.x * UserSettings.YLookSensitivity;
         }
 
-        private void Update()
-        {
-        }
 
         private void LateUpdate()
         {
-            UpdateCamera();
+            if (IsPlayer)
+            {
+                UpdateCamera();
+            }
         }
 
 
@@ -65,6 +51,9 @@ namespace SoulsLike
             Camera.main.transform.rotation = Quaternion.Euler(xA, yA, 0);
         }
 
-        
+        protected override void OnExit()
+        {
+
+        }
     }
 }
