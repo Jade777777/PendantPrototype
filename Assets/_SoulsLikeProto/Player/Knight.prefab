@@ -1323,10 +1323,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f28aa7fea7fc464bafe62dc4a4014e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _modifier: {fileID: 11400000, guid: 62843cedbb817a24095c042579baea44, type: 2}
+  stayTime: 0
   exitTime: 0.25
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
+  _onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &3553437239096423407
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using Mosaic;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -6,7 +7,13 @@ using UnityEngine.Events;
 
 public class Combatant : MonoBehaviour
 {
+    [SerializeField]
+    ICore _core;
 
+    [SerializeField]
+    Modifier _modifier;
+
+    [SerializeField]
     float stayTime = 0;
 
 
@@ -18,6 +25,12 @@ public class Combatant : MonoBehaviour
 
     [SerializeField]
     UnityEvent _onHit;
+
+    private void Start()
+    {
+        _core = GetComponentInParent<BehaviorInstance>().Core;
+        Debug.Log(GetComponentInParent<BehaviorInstance>());
+    }
 
     private void FixedUpdate()
     {
@@ -41,7 +54,8 @@ public class Combatant : MonoBehaviour
             Debug.Log("! collision" + other.gameObject.name +"  &  " +transform.parent.gameObject.name);
 
             _colliding = true;
-            Debug.Log(transform.parent.name + ": I've been hit!");
+            Debug.Log(transform.parent.name + ": I've been hit! Applying modifier:" + _modifier);
+            targetCombatant._core.Modifiers.ApplyModifier(_modifier,_core);
             _onHit.Invoke();  
         }
 
