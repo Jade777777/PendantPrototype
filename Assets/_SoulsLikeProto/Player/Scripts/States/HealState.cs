@@ -10,11 +10,6 @@ namespace SoulsLike
         [SerializeField]
         float _attackTime = 0.5f;
 
-        [Header("Camera Settings")]
-        [SerializeField]
-        float cameraDistance = 1f;
-        float minXAngle = -25;
-        float maxXAngle = 70;
         [SerializeField] 
         BehaviorInputType _nextInput;
 
