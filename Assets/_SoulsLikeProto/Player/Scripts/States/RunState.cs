@@ -31,11 +31,7 @@ namespace SoulsLike
             //throw new System.NotImplementedException();
         }
 
-        public override void OnMove(Vector2 Input)
-        {
-            DataTags.GetTag<MovementDataTag>().Direction = Input;
-            //_moveInput = Input;
-        }
+
 
         public override void OnDash(bool IsActivated)
         {
@@ -61,15 +57,6 @@ namespace SoulsLike
             UpdateRotation();
             UpdateAnimator();
         }
-        private void LateUpdate()
-        {
-            if (IsPlayer)
-            {
-                UpdateCamera();
-            }
-        }
-
-        
 
         private void UpdateAnimator()
         {

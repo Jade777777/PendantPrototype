@@ -23,7 +23,7 @@ namespace SoulsLike
 
         private void Update()
         {
-            stateInstance.SetPlayerStatus(false);
+
             float minDistance= 1.5f;
             float maxDistance= 20f;
             float attackRange = 2f;
@@ -35,12 +35,12 @@ namespace SoulsLike
             direction.Normalize();
             if (distance > minDistance && distance < maxDistance && Time.time > attackTime + attackRate)
             {
-                stateInstance.OnMove(new Vector2(direction.x, direction.z));
+                stateInstance.OnMove(direction);
 
             }
             else if(distance< maxDistance)
             {
-                stateInstance.OnMove( - new Vector2(direction.x, direction.z) *0.25f);
+                stateInstance.OnMove( - direction *0.25f);
             }
             if (distance< attackRange && Time.time >attackTime + attackRate)
             {

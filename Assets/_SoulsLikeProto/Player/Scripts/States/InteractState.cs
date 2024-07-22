@@ -26,26 +26,7 @@ namespace SoulsLike
         protected override void OnExit()
         { }
 
-        public override void OnMove(Vector2 Input)
-        {
-            DataTags.GetTag<MovementDataTag>().Direction = Input;
-        }
 
-        public override void OnLook(Vector2 mouseInput)
-        {
-            float xA = Character.DataTags.GetTag<CameraDataTag>().XAngle - mouseInput.y * UserSettings.XLookSensitivity;
-            Character.DataTags.GetTag<CameraDataTag>().XAngle = Mathf.Clamp(xA, minXAngle, maxXAngle);
-            Character.DataTags.GetTag<CameraDataTag>().YAngle += mouseInput.x * UserSettings.YLookSensitivity;
-        }
-
-        private void Update()
-        {
-        }
-
-        private void LateUpdate()
-        {
-            UpdateCamera();
-        }
 
     }
 }

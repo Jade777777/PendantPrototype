@@ -279,6 +279,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae06f221582a16c4fa32204fa285d40f, type: 2}
   - {fileID: 11400000, guid: f5cf7a9b267f9ff48a8cfd1faba65351, type: 2}
   _modifiers: []
+  _modifierDecorators: []
   _eventModifiers: []
 --- !u!4 &213131802
 Transform:
@@ -408,6 +409,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583700091082509869, guid: dce22686314004b4e9b923a0baf61f2b,
+        type: 3}
+      propertyPath: _cameraDistance
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9068801882650354346, guid: dce22686314004b4e9b923a0baf61f2b,
         type: 3}
@@ -889,6 +895,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae06f221582a16c4fa32204fa285d40f, type: 2}
   - {fileID: 11400000, guid: f5cf7a9b267f9ff48a8cfd1faba65351, type: 2}
   _modifiers: []
+  _modifierDecorators: []
   _eventModifiers: []
 --- !u!4 &510290864
 Transform:
@@ -1032,6 +1039,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae06f221582a16c4fa32204fa285d40f, type: 2}
   - {fileID: 11400000, guid: f5cf7a9b267f9ff48a8cfd1faba65351, type: 2}
   _modifiers: []
+  _modifierDecorators: []
   _eventModifiers: []
 --- !u!4 &574151643
 Transform:
@@ -1474,6 +1482,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae06f221582a16c4fa32204fa285d40f, type: 2}
   - {fileID: 11400000, guid: f5cf7a9b267f9ff48a8cfd1faba65351, type: 2}
   _modifiers: []
+  _modifierDecorators: []
   _eventModifiers: []
 --- !u!4 &1426188662
 Transform:
@@ -2172,6 +2181,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae06f221582a16c4fa32204fa285d40f, type: 2}
   - {fileID: 11400000, guid: f5cf7a9b267f9ff48a8cfd1faba65351, type: 2}
   _modifiers: []
+  _modifierDecorators: []
   _eventModifiers: []
 --- !u!4 &1689228427
 Transform:
@@ -2484,6 +2494,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae06f221582a16c4fa32204fa285d40f, type: 2}
   - {fileID: 11400000, guid: f5cf7a9b267f9ff48a8cfd1faba65351, type: 2}
   _modifiers: []
+  _modifierDecorators: []
   _eventModifiers: []
 --- !u!4 &2010348920
 Transform:
@@ -2655,6 +2666,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae06f221582a16c4fa32204fa285d40f, type: 2}
   - {fileID: 11400000, guid: f5cf7a9b267f9ff48a8cfd1faba65351, type: 2}
   _modifiers: []
+  _modifierDecorators: []
   _eventModifiers: []
 --- !u!114 &7028555304414040623
 MonoBehaviour:
