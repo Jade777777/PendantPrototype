@@ -67,18 +67,6 @@ namespace SoulsLike
            // Debug.Log(this + " does not use OnInteract input.");
         }
 
-        public virtual void TakeDamage()
-        {
-            DataTags.GetTag<CombatDataTag>().Health -= DataTags.GetTag<CombatDataTag>().WeaponDamage;
-            Debug.Log("Health: " + DataTags.GetTag<CombatDataTag>().Health);
-            if(DataTags.GetTag<CombatDataTag>().Health <= 0)
-            {
-
-                Debug.Log("Dead!");
-                Character.StateMachine.Transition(_death);
-            }
-            
-        }
 
         protected void UpdatePosition()
         {
