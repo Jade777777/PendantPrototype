@@ -31,11 +31,6 @@ namespace SoulsLike
         protected override void OnExit()
         { }
 
-        public override void OnMove(Vector2 Input)
-        {
-            DataTags.GetTag<MovementDataTag>().Direction = Input;
-        }
-
         public override void OnDash(bool IsActivated)
         { 
         
@@ -48,10 +43,7 @@ namespace SoulsLike
             UpdateAnimator();
         }
 
-        private void LateUpdate()
-        {
-            UpdateCamera();
-        }
+
 
 
 
