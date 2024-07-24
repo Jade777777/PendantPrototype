@@ -413,7 +413,7 @@ PrefabInstance:
     - target: {fileID: 5583700091082509869, guid: dce22686314004b4e9b923a0baf61f2b,
         type: 3}
       propertyPath: _cameraDistance
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9068801882650354346, guid: dce22686314004b4e9b923a0baf61f2b,
         type: 3}
