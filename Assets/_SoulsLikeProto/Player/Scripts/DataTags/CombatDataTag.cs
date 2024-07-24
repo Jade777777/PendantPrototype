@@ -6,6 +6,8 @@ using UnityEngine;
 public class CombatDataTag : DataTag
 {
     public int Health = 10;
+    public int MaxHealth = 10;
+    public int HealthPots = 3;
     public int Stamina;
     public int WeaponDamage = 4;
 }

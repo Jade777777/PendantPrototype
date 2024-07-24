@@ -1328,10 +1328,7 @@ MonoBehaviour:
   exitTime: 0.25
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
-  _onHit:
-    m_PersistentCalls:
-      m_Calls: []
+    m_Bits: 128
 --- !u!54 &3553437239096423407
 Rigidbody:
   m_ObjectHideFlags: 0

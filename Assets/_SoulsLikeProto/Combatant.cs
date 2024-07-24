@@ -23,8 +23,7 @@ public class Combatant : MonoBehaviour
     [SerializeField]
     LayerMask _layerMask;
 
-    [SerializeField]
-    UnityEvent _onHit;
+
 
     private void Start()
     {
@@ -56,7 +55,7 @@ public class Combatant : MonoBehaviour
             _colliding = true;
             Debug.Log(transform.parent.name + ": I've been hit! Applying modifier:" + _modifier);
             targetCombatant._core.Modifiers.ApplyModifier(_modifier,_core);
-            _onHit.Invoke();  
+
         }
 
        

@@ -1,6 +1,4 @@
-using Mosaic;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 namespace SoulsLike
 {
@@ -9,7 +7,8 @@ namespace SoulsLike
        
         [SerializeField]
         float _attackTime = 0.5f;
-
+        [SerializeField]
+        int _healing = 4;
         [SerializeField] 
         BehaviorInputType _nextInput;
 
@@ -25,7 +24,17 @@ namespace SoulsLike
         }
         protected override void OnExit()
         {
-            DataTags.GetTag<CombatDataTag>().Health += 5;
+            if (DataTags.GetTag<CombatDataTag>().HealthPots >= 1)
+            {
+                DataTags.GetTag<CombatDataTag>().Health--;
+                DataTags.GetTag<CombatDataTag>().Health = 
+                    Mathf.Clamp(DataTags.GetTag<CombatDataTag>().Health + _healing, 0, DataTags.GetTag<CombatDataTag>().MaxHealth);
+                Debug.Log("Healed! " + DataTags.GetTag<CombatDataTag>().HealthPots + " health pots remaining");
+            }
+            else
+            {
+                Debug.Log("Out of health pots");
+            }
         }
 
 

@@ -29,7 +29,7 @@ namespace SoulsLike
             float attackRange = 2f;
 
             Vector3 currentPosition = stateInstance.transform.position;
-            Vector3 targetPosition = GetClosestEnemie().StateMachine.GetCurrentStateInstance().transform.position;
+            Vector3 targetPosition = GetClosestEnemy().StateMachine.GetCurrentStateInstance().transform.position;
             Vector3 direction = targetPosition - currentPosition;
             float distance = direction.magnitude;
             direction.Normalize();
@@ -50,17 +50,9 @@ namespace SoulsLike
         }
 
 
-        private Core GetClosestEnemie()
+        private Core GetClosestEnemy()
         {
             return _enemies[0];
-        }
-        private List<Core> GetEnemies()
-        {
-            return _enemies;
-        }
-        private List<Core> GetFriendlies()
-        {
-            return _friendlies;
         }
     }
 }
