@@ -1,6 +1,4 @@
 using Mosaic;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 namespace SoulsLike
 {
@@ -22,11 +20,11 @@ namespace SoulsLike
             Vector2 _moveInput = DataTags.GetTag<MovementDataTag>().Direction;
             Vector3 relativeInput = (Quaternion.Euler(0, Camera.main.transform.rotation.eulerAngles.y, 0) * new Vector3(_moveInput.x, 0, _moveInput.y));
             Vector3 Velocity = relativeInput * _speed;
-            Character.DataTags.GetTag<MovementDataTag>().Velocity = Velocity;
+            Core.DataTags.GetTag<MovementDataTag>().Velocity = Velocity;
         }
         private void EndDash()
         {
-            Character.StateMachine.Transition(_nextInput);
+            Core.StateMachine.Transition(_nextInput);
         }
         protected override void OnExit()
         { }
@@ -44,15 +42,13 @@ namespace SoulsLike
         }
 
 
-
-
-
         private void UpdateAnimator()
         {
             Animator animator = GetComponentInChildren<Animator>();
-            animator.SetFloat("Velocity", Character.DataTags.GetTag<MovementDataTag>().Velocity.magnitude);
+            animator.SetFloat("Velocity", Core.DataTags.GetTag<MovementDataTag>().Velocity.magnitude);
 
         }
+
 
 
 

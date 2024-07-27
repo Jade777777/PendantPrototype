@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using Mosaic;
 namespace SoulsLike
 {
     public class HealState : BaseSoulState
@@ -8,7 +9,7 @@ namespace SoulsLike
         [SerializeField]
         float _attackTime = 0.5f;
         [SerializeField]
-        int _healing = 4;
+        Modifier _modifier;
         [SerializeField] 
         BehaviorInputType _nextInput;
 
@@ -20,16 +21,14 @@ namespace SoulsLike
         }
         private void EndDash()
         {
-            Character.StateMachine.Transition(_nextInput);
+            Core.StateMachine.Transition(_nextInput);
         }
         protected override void OnExit()
         {
             if (DataTags.GetTag<CombatDataTag>().HealthPots >= 1)
             {
-                DataTags.GetTag<CombatDataTag>().Health--;
-                DataTags.GetTag<CombatDataTag>().Health = 
-                    Mathf.Clamp(DataTags.GetTag<CombatDataTag>().Health + _healing, 0, DataTags.GetTag<CombatDataTag>().MaxHealth);
-                Debug.Log("Healed! " + DataTags.GetTag<CombatDataTag>().HealthPots + " health pots remaining");
+                DataTags.GetTag<CombatDataTag>().HealthPots--;
+                Core.Modifiers.ApplyModifier(_modifier,Core);
             }
             else
             {

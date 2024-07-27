@@ -75,7 +75,7 @@ namespace SoulsLike
 
             Vector3 Velocity = _moveInput * _speed;
             GetComponent<CharacterController>().SimpleMove(Velocity);
-            Character.DataTags.GetTag<MovementDataTag>().Velocity = Velocity;
+            Core.DataTags.GetTag<MovementDataTag>().Velocity = Velocity;
         }
         protected void UpdateRotation()//I suspect this is often driven by the animations themself. There is a distint 180 degree turn animation for switching directions
         {

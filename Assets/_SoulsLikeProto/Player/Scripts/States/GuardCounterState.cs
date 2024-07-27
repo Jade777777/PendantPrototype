@@ -25,7 +25,7 @@ namespace SoulsLike
         }
         private void EndDash()
         {
-            Character.StateMachine.Transition(_nextInput);
+            Core.StateMachine.Transition(_nextInput);
         }
         protected override void OnExit()
         { }
