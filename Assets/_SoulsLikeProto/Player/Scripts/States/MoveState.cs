@@ -40,38 +40,38 @@ namespace SoulsLike
         {
             if (isActivated)
             {
-                Character.StateMachine.Transition(_dash);
+                Core.StateMachine.Transition(_dash);
             }
 
         }
         public override void OnDodge()
         {
 
-            Character.StateMachine.Transition(_dodge);
+            Core.StateMachine.Transition(_dodge);
 
         }
         public override void OnStandardAttack()
         {
-            Character.StateMachine.Transition(_attack);
+            Core.StateMachine.Transition(_attack);
         }
         public override void OnHeavyAttack()
         {
-            Character.StateMachine.Transition(_heavyAttack);
+            Core.StateMachine.Transition(_heavyAttack);
         }
         public override void OnGuard(bool isActivated)
         {
             if (isActivated)
             {
-                Character.StateMachine.Transition(_block);
+                Core.StateMachine.Transition(_block);
             }
         }
         public override void OnUseItem()
         {
-            Character.StateMachine.Transition(_useItem);
+            Core.StateMachine.Transition(_useItem);
         }
         public override void OnInteract()
         {
-            Character.StateMachine.Transition(_interact);
+            Core.StateMachine.Transition(_interact);
         }
 
         private void Update()
@@ -85,7 +85,7 @@ namespace SoulsLike
         private void UpdateAnimator()
         {
             Animator animator = GetComponentInChildren<Animator>();
-            animator.SetFloat("Velocity", Character.DataTags.GetTag<MovementDataTag>().Velocity.magnitude/_speed);
+            animator.SetFloat("Velocity", Core.DataTags.GetTag<MovementDataTag>().Velocity.magnitude/_speed);
         }
 
 

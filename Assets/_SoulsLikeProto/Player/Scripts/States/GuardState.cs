@@ -1,3 +1,5 @@
+using Mosaic;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +9,9 @@ namespace SoulsLike
 {
     public class GuardState : BaseSoulState
     {
+        [SerializeField]
+        ModifierDecorator _guardMod;
+        Guid _guardID;
 
         [SerializeField]
         BehaviorInputType _dash;
@@ -30,45 +35,47 @@ namespace SoulsLike
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            _guardID = Core.Modifiers.AddModifierDecorator(_guardMod);
         }
 
         protected override void OnExit()
         {
-            //throw new System.NotImplementedException();
+            Core.Modifiers.RemoveModifierDecorator(_guardID);
         }
 
         public override void OnDash(bool isActivated)
         {
             if (isActivated)
             {
-                Character.StateMachine.Transition(_dash);
+                Core.StateMachine.Transition(_dash);
             }
 
         }
         public override void OnDodge()
         {
 
-            Character.StateMachine.Transition(_dodge);
+            Core.StateMachine.Transition(_dodge);
 
         }
         public override void OnStandardAttack()
         {
-            Character.StateMachine.Transition(_attack);
+            Core.StateMachine.Transition(_attack);
         }
         public override void OnHeavyAttack()
         {
-            Character.StateMachine.Transition(_heavyAttack);
+            Core.StateMachine.Transition(_heavyAttack);
         }
         public override void OnGuard(bool isActivated)
         {
             if (!isActivated)
             {
-                Character.StateMachine.Transition(_run);
+                Core.StateMachine.Transition(_run);
             }
         }
         public override void OnGuardCounter()
         {
-            Character.StateMachine.Transition(_parry);
+            Core.StateMachine.Transition(_parry);
         }
 
         private void Update()
@@ -81,7 +88,7 @@ namespace SoulsLike
         private void UpdateAnimator()
         {
             Animator animator = GetComponentInChildren<Animator>();
-            animator.SetFloat("Velocity", Character.DataTags.GetTag<MovementDataTag>().Velocity.magnitude);
+            animator.SetFloat("Velocity", Core.DataTags.GetTag<MovementDataTag>().Velocity.magnitude);
 
         }
 
