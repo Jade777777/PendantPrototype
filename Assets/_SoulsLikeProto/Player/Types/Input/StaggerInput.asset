@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62ffb1b179aac9544820eaac7c7879ad, type: 3}
-  m_Name: BasicGuard
+  m_Script: {fileID: 11500000, guid: 87a63e24d121a0444bd4e05fa061112f, type: 3}
+  m_Name: StaggerInput
   m_EditorClassIdentifier: 
-  _priority: 0
-  _guardAngle: 45

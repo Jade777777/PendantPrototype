@@ -24,11 +24,6 @@ namespace SoulsLike
         BehaviorInputType _useItem;
         [SerializeField]
         BehaviorInputType _interact;
-        protected override void OnEnter()
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
 
         protected override void OnExit()
         {

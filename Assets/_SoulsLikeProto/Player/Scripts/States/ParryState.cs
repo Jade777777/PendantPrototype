@@ -1,12 +1,16 @@
 using Mosaic;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace SoulsLike
 {
-    public class GuardCounterState : BaseSoulState
+    public class ParryState : BaseSoulState
     {
-       
+        [SerializeField]
+        ModifierDecorator<DamageMod> _parryMod;
+        Guid _parryID;
+
         [SerializeField]
         float _attackTime = 0.5f;
 
@@ -21,10 +25,13 @@ namespace SoulsLike
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            Invoke("EndDash", _attackTime);
+            _parryID = Core.Modifiers.AddModifierDecorator(_parryMod);
+            Invoke(nameof(EndDash), _attackTime);
+
         }
         private void EndDash()
         {
+            Core.Modifiers.RemoveModifierDecorator(_parryID);
             Core.StateMachine.Transition(_nextInput);
         }
         protected override void OnExit()

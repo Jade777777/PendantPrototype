@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a49e2b069f484f4e9172b490a7fe11c, type: 3}
-  m_Name: Guard Counter
+  m_Name: Stagger
   m_EditorClassIdentifier: 
-  _moduleState: {fileID: 3313362663752202961, guid: 439e9bd0ee205af489c4be9e10c40e13,
+  _moduleState: {fileID: 3313362663752202961, guid: c1fa7008c4a5cee49b63fbe08c9b086f,
     type: 3}
   _state:
-  - {fileID: 11400000, guid: d97d7f4177b477647bc4b7118fc27e8d, type: 2}
+  - {fileID: 11400000, guid: 29b4556f150664b459057bd9691c021c, type: 2}
   _decisionData:
   - _prevState:
-    - {fileID: 11400000, guid: 7a4b0200164a8d3468a6d6432188f8c1, type: 2}
+    - {fileID: 0}
     _validInput:
-    - {fileID: 11400000, guid: 434645a54440d434392dea9f5dc15c7a, type: 2}
+    - {fileID: 11400000, guid: 81bc77e5df6cac64fa147df93f896a82, type: 2}
     _decisionAlgorithms: []
   _priority: 100
