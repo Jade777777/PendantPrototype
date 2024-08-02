@@ -268,6 +268,8 @@ namespace SoulsLike
         }
         public void OnPause(InputValue input)
         {
+            if (stateInstance != null)
+                stateInstance.OnPause();
             Application.Quit();
             Debug.Log("Exit Game");
         }

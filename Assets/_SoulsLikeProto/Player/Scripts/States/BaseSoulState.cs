@@ -67,7 +67,11 @@ namespace SoulsLike
            // Debug.Log(this + " does not use OnInteract input.");
         }
 
-
+        public virtual void OnPause()
+        {
+            Debug.Log("Pause menu not implemented, quitting");
+            Application.Quit();
+        }
         protected void UpdatePosition()
         {
             Vector3 _moveInput = DataTags.GetTag<MovementDataTag>().Direction;
