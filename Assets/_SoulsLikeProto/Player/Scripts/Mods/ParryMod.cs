@@ -2,12 +2,15 @@ using Mosaic;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-[CreateAssetMenu(fileName = "BasicGuard", menuName = "Soul / Modifier / Guard", order = 1)]
-public class GuardMod : ModifierDecorator<DamageMod>
+[CreateAssetMenu(fileName = "BasicParry", menuName = "Soul / Modifier / Parry", order = 1)]
+public class ParryMod : ModifierDecorator<DamageMod>
 {
     [SerializeField]
-    float _guardAngle;
+    float _parryAngle = 45;
+    [SerializeField]
+    Modifier _staggerMod;//the modifier that is applied when a target is succesfuly parried.
     public override void Begin()
     {
         Transform attacker = GetOrigin().StateMachine.GetCurrentStateInstance().transform;
@@ -17,9 +20,12 @@ public class GuardMod : ModifierDecorator<DamageMod>
         float angleOfAttack = Vector3.Angle(offset, defender.forward);
         Debug.Log("angle of attack "+ angleOfAttack);
 
-        if (angleOfAttack > _guardAngle)
+        
+        if (angleOfAttack < _parryAngle)
         {
-            base.Begin();
+            Debug.Log("PARRY SUCCESFUL");
+            ICore origin = GetOrigin(); //The enemy that is currently attacking the player
+            origin.Modifiers.ApplyModifier(_staggerMod,GetCore());
         }
     }
 }

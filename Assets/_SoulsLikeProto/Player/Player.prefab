@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ca8b8b0841ac144b1802b88cd11677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraDistance: 1
 --- !u!114 &-4962748652797279881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,5 +102,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f17bb57aa8bc50b43b526bc8215f879f, type: 2}
   - {fileID: 11400000, guid: ae06f221582a16c4fa32204fa285d40f, type: 2}
   - {fileID: 11400000, guid: f5cf7a9b267f9ff48a8cfd1faba65351, type: 2}
+  - {fileID: 11400000, guid: fe3279e49e5abda42b8bb42cd0ba9fa2, type: 2}
   _modifiers: []
+  _modifierDecorators: []
   _eventModifiers: []
