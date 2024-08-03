@@ -10,14 +10,16 @@ namespace SoulsLike
 
 
         [SerializeField]
-        BehaviorInputType _death;
-        protected bool IsPlayer;
+        protected BehaviorInputType _death;
 
+        private float fallTimer;
+        private float deathFallTime = 2.8f;
 
         protected override void OnEnter()
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            fallTimer = Time.time;
         }
 
         public virtual void OnMove(Vector3 Input)
@@ -67,7 +69,11 @@ namespace SoulsLike
            // Debug.Log(this + " does not use OnInteract input.");
         }
 
-
+        public virtual void OnPause()
+        {
+            Debug.Log("Pause menu not implemented, quitting");
+            Application.Quit();
+        }
         protected void UpdatePosition()
         {
             Vector3 _moveInput = DataTags.GetTag<MovementDataTag>().Direction;
@@ -76,6 +82,20 @@ namespace SoulsLike
             Vector3 Velocity = _moveInput * _speed;
             GetComponent<CharacterController>().SimpleMove(Velocity);
             Core.DataTags.GetTag<MovementDataTag>().Velocity = Velocity;
+
+
+
+            if (GetComponent<CharacterController>().isGrounded == false)
+            {
+                if (Time.time - fallTimer> deathFallTime)
+                {
+                    Core.StateMachine.Transition(_death);
+                }
+            }
+            else
+            {
+                fallTimer = Time.time;
+            }
         }
         protected void UpdateRotation()//I suspect this is often driven by the animations themself. There is a distint 180 degree turn animation for switching directions
         {

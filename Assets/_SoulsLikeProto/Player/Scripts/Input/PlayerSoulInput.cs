@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using Mosaic;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
-using UnityEditor.UIElements;
+
 
 namespace SoulsLike
 {
@@ -268,6 +266,8 @@ namespace SoulsLike
         }
         public void OnPause(InputValue input)
         {
+            if (stateInstance != null)
+                stateInstance.OnPause();
             Application.Quit();
             Debug.Log("Exit Game");
         }

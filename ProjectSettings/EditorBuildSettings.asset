@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_SoulsLikeProto/Scenes/Testing.unity
-    guid: 7dda7c599e74ea84992f4ce14c623b18
+    path: Assets/_SoulsLikeProto/Scenes/MechanicTesting.unity
+    guid: 2f5e1f20a232fcd40975b15071adb011
+  - enabled: 1
+    path: Assets/_SoulsLikeProto/Scenes/End.unity
+    guid: 2ed04e76e915fbc48acb58a9594cf545
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 03cb99bb87cc23a49a220cae8ccf4aa2,
       type: 2}
