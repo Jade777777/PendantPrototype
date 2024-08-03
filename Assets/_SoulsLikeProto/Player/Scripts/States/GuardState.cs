@@ -33,8 +33,7 @@ namespace SoulsLike
         BehaviorInputType _parry;
         protected override void OnEnter()
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            base.OnEnter();
 
             _guardID = Core.Modifiers.AddModifierDecorator(_guardMod);
         }

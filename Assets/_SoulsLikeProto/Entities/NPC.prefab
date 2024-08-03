@@ -77,7 +77,8 @@ MonoBehaviour:
   _enemies:
   - {fileID: 0}
   _friendlies: []
-  attackRate: 4
+  attackRate: 3
+  maxDistance: 10
 --- !u!1 &4791241943258401934
 GameObject:
   m_ObjectHideFlags: 0

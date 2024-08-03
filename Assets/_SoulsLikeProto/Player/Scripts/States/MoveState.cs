@@ -7,7 +7,6 @@ namespace SoulsLike
 {
     public class MoveState : BaseSoulState
     {
-        
 
 
         [SerializeField]
