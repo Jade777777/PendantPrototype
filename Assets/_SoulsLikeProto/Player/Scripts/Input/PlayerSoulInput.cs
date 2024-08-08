@@ -12,6 +12,7 @@ namespace SoulsLike
         [Header("Camera Settings")]
         [SerializeField]
         private float _cameraDistance = 1f;
+
         private float _minXAngle = -25;
         private float _maxXAngle = 70;
         private float _xAngle;
@@ -268,8 +269,6 @@ namespace SoulsLike
         {
             if (stateInstance != null)
                 stateInstance.OnPause();
-            Application.Quit();
-            Debug.Log("Exit Game");
         }
 
 

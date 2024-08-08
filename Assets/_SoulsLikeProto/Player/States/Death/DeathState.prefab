@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1016528118769948439}
-  - component: {fileID: 4350746272265546759}
   - component: {fileID: -2581829791431797766}
   m_Layer: 0
   m_Name: DeathState
@@ -34,24 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &4350746272265546759
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3313362663752202961}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1.8
-  m_Radius: 0.25
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.98, z: 0}
 --- !u!114 &-2581829791431797766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetRootBone: {fileID: 0}
   _targetSMRContainer: {fileID: 0}
+  _speed: 5
   _death: {fileID: 11400000, guid: 7e54042138017604bb79a925ad72ebce, type: 2}
-  cameraDistance: 1
 --- !u!1001 &20999092197481969
 PrefabInstance:
   m_ObjectHideFlags: 0

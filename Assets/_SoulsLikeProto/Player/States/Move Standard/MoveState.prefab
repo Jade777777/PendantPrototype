@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetRootBone: {fileID: 0}
   _targetSMRContainer: {fileID: 0}
-  _speed: 4
+  _speed: 3
   _death: {fileID: 11400000, guid: 7e54042138017604bb79a925ad72ebce, type: 2}
   _dash: {fileID: 11400000, guid: 54b074ff21c9a7b42b3a53dda5a460d8, type: 2}
   _dodge: {fileID: 11400000, guid: 1825517df3a8cd64283d565b6de759a7, type: 2}

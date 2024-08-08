@@ -74,7 +74,7 @@ namespace SoulsLike
             Debug.Log("Pause menu not implemented, quitting");
             Application.Quit();
         }
-        protected void UpdatePosition()
+        protected virtual void UpdatePosition()
         {
             Vector3 _moveInput = DataTags.GetTag<MovementDataTag>().Direction;
             //While rotation and camera movement happen over time, movement seems to be linear

@@ -68,7 +68,8 @@ MonoBehaviour:
   _targetSMRContainer: {fileID: 0}
   _speed: 10
   _death: {fileID: 11400000, guid: 7e54042138017604bb79a925ad72ebce, type: 2}
-  _dashTime: 0.5
+  _dodgeTime: 0.3
+  _dodgeDistance: 1.75
   _nextInput: {fileID: 11400000, guid: 92cf40e050b526140b4d1be11aa3e1d6, type: 2}
 --- !u!1001 &8229012457676326310
 PrefabInstance:

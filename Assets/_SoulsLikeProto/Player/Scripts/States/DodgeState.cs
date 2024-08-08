@@ -6,21 +6,29 @@ namespace SoulsLike
     {
 
         [SerializeField]
-        float _dashTime = 0.5f;
-
+        float _dodgeTime = 0.5f;
+        [SerializeField]
+        float _dodgeDistance = 3f;
 
         [SerializeField] 
         BehaviorInputType _nextInput;
 
+        Vector3 _startingPos;
+        Vector3 _direction;
+        float _distance;
         protected override void OnEnter()
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            Invoke("EndDash", _dashTime);
+            
+            base.OnEnter();
+            Invoke(nameof(EndDash), _dodgeTime);
             Vector2 _moveInput = DataTags.GetTag<MovementDataTag>().Direction;
             Vector3 relativeInput = (Quaternion.Euler(0, Camera.main.transform.rotation.eulerAngles.y, 0) * new Vector3(_moveInput.x, 0, _moveInput.y));
             Vector3 Velocity = relativeInput * _speed;
             Core.DataTags.GetTag<MovementDataTag>().Velocity = Velocity;
+
+            _startingPos = transform.position;
+            _direction = DataTags.GetTag<MovementDataTag>().Direction;
+            _distance = _dodgeDistance;
         }
         private void EndDash()
         {
@@ -41,7 +49,13 @@ namespace SoulsLike
             UpdateAnimator();
         }
 
+        protected override void UpdatePosition()
+        {
+            float speed = _dodgeDistance / _dodgeTime;
+            Vector3 dodge = _direction * speed * Time.deltaTime;
+            GetComponent<CharacterController>().Move(dodge);
 
+        }
         private void UpdateAnimator()
         {
             Animator animator = GetComponentInChildren<Animator>();

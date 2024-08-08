@@ -67,7 +67,6 @@ MonoBehaviour:
   _targetRootBone: {fileID: 0}
   _targetSMRContainer: {fileID: 0}
   _speed: 5
-  cameraDistance: 3
   _death: {fileID: 11400000, guid: 7e54042138017604bb79a925ad72ebce, type: 2}
   _attackTime: 2
   _nextInput: {fileID: 11400000, guid: 92cf40e050b526140b4d1be11aa3e1d6, type: 2}
@@ -142,7 +141,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _modifier
       value: 
-      objectReference: {fileID: 11400000, guid: 62843cedbb817a24095c042579baea44,
+      objectReference: {fileID: 11400000, guid: 5a7c919db893e0c4b8e8691df07442a6,
         type: 2}
     - target: {fileID: 3483149761500056250, guid: 46aee0c60948c3d4c996c4b79921a409,
         type: 3}

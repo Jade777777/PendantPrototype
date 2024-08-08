@@ -5,7 +5,8 @@ namespace SoulsLike
 {
     public class RunState: BaseSoulState
     {
-
+        [SerializeField]
+        BehaviorInputType _move;
         [SerializeField]
         BehaviorInputType _dash;
         [SerializeField]
@@ -22,8 +23,7 @@ namespace SoulsLike
         BehaviorInputType _interact;
         protected override void OnEnter()
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            base.OnEnter();
         }
 
         protected override void OnExit()
@@ -38,6 +38,11 @@ namespace SoulsLike
             if (!IsActivated)
             {
                 Core.StateMachine.Transition(_dash);
+            }
+            else
+            {
+                Core.StateMachine.Transition(_move);
+                Debug.Log("STOPING DASH");
             }
         }
         public override void OnStandardAttack()
