@@ -10,6 +10,9 @@ namespace SoulsLike
     public class GuardState : BaseSoulState
     {
         [SerializeField]
+        float _guardCounterWindow = 0.8f;
+
+        [SerializeField]
         ModifierDecorator _guardMod;
         Guid _guardID;
 
@@ -31,6 +34,8 @@ namespace SoulsLike
         BehaviorInputType _run;
         [SerializeField]
         BehaviorInputType _parry;
+        [SerializeField]
+        BehaviorInputType _guardCounter;
         protected override void OnEnter()
         {
             base.OnEnter();
@@ -59,11 +64,19 @@ namespace SoulsLike
         }
         public override void OnStandardAttack()
         {
+
             Core.StateMachine.Transition(_attack);
         }
         public override void OnHeavyAttack()
         {
-            Core.StateMachine.Transition(_heavyAttack);
+            if (DataTags.GetTag<CombatDataTag>().LastAttackBlockedTime + _guardCounterWindow > Time.time)
+            {
+                Core.StateMachine.Transition(_guardCounter);
+            }
+            else
+            {
+                Core.StateMachine.Transition(_heavyAttack);
+            }
         }
         public override void OnGuard(bool isActivated)
         {
@@ -72,10 +85,7 @@ namespace SoulsLike
                 Core.StateMachine.Transition(_run);
             }
         }
-        public override void OnGuardCounter()
-        {
-            Core.StateMachine.Transition(_parry);
-        }
+
 
         private void Update()
         {

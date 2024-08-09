@@ -57,6 +57,7 @@ MonoBehaviour:
   _block: {fileID: 11400000, guid: 7c2f9c8a1df5c5b49ac82e373dce656d, type: 2}
   _useItem: {fileID: 11400000, guid: 5a635b6240fd0ee4e95492db63e39451, type: 2}
   _interact: {fileID: 11400000, guid: ab9eeadb6a39e324087eecac33a46a9d, type: 2}
+  _parry: {fileID: 11400000, guid: 434645a54440d434392dea9f5dc15c7a, type: 2}
 --- !u!143 &4350746272265546759
 CharacterController:
   m_ObjectHideFlags: 0
@@ -69,7 +70,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.5
-  m_Radius: 0.25
+  m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08

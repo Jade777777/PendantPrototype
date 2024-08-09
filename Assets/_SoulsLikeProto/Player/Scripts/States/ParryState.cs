@@ -26,6 +26,7 @@ namespace SoulsLike
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             _parryID = Core.Modifiers.AddModifierDecorator(_parryMod);
+            Debug.Log("PARRYYY!!!!!!");
             Invoke(nameof(EndDash), _attackTime);
 
         }

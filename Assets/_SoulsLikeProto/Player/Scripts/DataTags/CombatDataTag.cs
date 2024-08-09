@@ -10,4 +10,6 @@ public class CombatDataTag : DataTag
     public int HealthPots = 3;
     public int Stamina;
     public int WeaponDamage = 4;
+    public float LastAttackBlockedTime;
+    
 }

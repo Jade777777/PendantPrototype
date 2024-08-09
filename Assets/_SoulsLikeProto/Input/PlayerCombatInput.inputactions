@@ -24,15 +24,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dash",
-                    "type": "PassThrough",
-                    "id": "ecb78bf9-576f-41c8-b7cd-055ccdd0bfb6",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "Hold",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "MouseLook",
                     "type": "Value",
                     "id": "78171b6f-51d1-4287-988f-d51e96e929d3",
@@ -79,7 +70,7 @@
                 },
                 {
                     "name": "Guard",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "b2324942-37c4-409e-a1db-f92b95cec4b8",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -87,9 +78,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "GuardCounter",
+                    "name": "Parry",
                     "type": "Button",
-                    "id": "3659d8dd-2360-44e2-80e3-cb17ca23c21a",
+                    "id": "f9572660-a90b-4b4e-871e-0ae4d71b382f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -258,28 +249,6 @@
                 },
                 {
                     "name": "",
-                    "id": "972c1718-33b4-45f9-8ee7-d79296c4a8be",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "59f5f01a-fdd4-478d-b67e-07a77a1a8864",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "9a29cb4b-a588-48bd-b101-45064ede4ffd",
                     "path": "<Gamepad>/rightStickPress",
                     "interactions": "",
@@ -310,94 +279,6 @@
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "40016385-6c00-4333-a6e5-88499c1074b4",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Guard",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "85630656-25bc-4265-8fc8-cfbcaa79fcac",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Guard",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Mouse",
-                    "id": "d5236052-e3d2-4bc2-9ad7-57bc72cba4e3",
-                    "path": "OneModifier(overrideModifiersNeedToBePressedFirst=true)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GuardCounter",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "modifier",
-                    "id": "e38f6c2c-3f6a-4bab-871f-8398a403c3b6",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GuardCounter",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "51d2d6e3-6448-4b26-bf0f-68bef3592370",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GuardCounter",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Controller",
-                    "id": "9590e893-2afe-4a91-9c42-336a9e6024a5",
-                    "path": "OneModifier",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GuardCounter",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "modifier",
-                    "id": "6f578694-18f4-455f-8fa1-cdcab0ef69b1",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GuardCounter",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "85fb4247-5f18-4321-b71d-ecf11bda3c17",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "GuardCounter",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -489,8 +370,8 @@
                 },
                 {
                     "name": "",
-                    "id": "0a5ff637-6426-4fc7-9853-4d41e5016132",
-                    "path": "<Mouse>/leftButton",
+                    "id": "25ee90a4-8bb6-4e52-a9cd-4d20080ce930",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -500,8 +381,8 @@
                 },
                 {
                     "name": "",
-                    "id": "25ee90a4-8bb6-4e52-a9cd-4d20080ce930",
-                    "path": "<Gamepad>/rightShoulder",
+                    "id": "7a0e0593-f967-479c-97de-6c0d5b926b80",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -539,6 +420,72 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse;Touch",
                     "action": "MouseLook",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "40016385-6c00-4333-a6e5-88499c1074b4",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Guard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "85630656-25bc-4265-8fc8-cfbcaa79fcac",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Guard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "3688ac60-4914-4883-a07c-46e2d478082e",
+                    "path": "OneModifier(overrideModifiersNeedToBePressedFirst=true)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parry",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "dcb00aa6-bdc8-4e95-881e-ef17276a128a",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parry",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "f3634fac-15ff-4057-9099-a5d18aff3185",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parry",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "0b5099f3-2387-4c10-8a05-d3c473b3644d",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parry",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

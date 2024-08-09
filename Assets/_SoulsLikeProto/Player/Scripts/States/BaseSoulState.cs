@@ -56,9 +56,10 @@ namespace SoulsLike
         {
            // Debug.Log(this + " does not use OnGuard input.");
         }
-        public virtual void OnGuardCounter()
+
+        public virtual void OnParry()
         {
-           // Debug.Log(this + " does not use OnGuardCounter input.");
+            // Debug.Log(this + " does not use OnGuardCounter input.");
         }
         public virtual void OnUseItem()
         {
@@ -82,6 +83,7 @@ namespace SoulsLike
             Vector3 Velocity = _moveInput * _speed;
             GetComponent<CharacterController>().SimpleMove(Velocity);
             Core.DataTags.GetTag<MovementDataTag>().Velocity = Velocity;
+     
 
 
 

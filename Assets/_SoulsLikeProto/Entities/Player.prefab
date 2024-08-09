@@ -78,6 +78,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraDistance: 1
+  dash:
+    m_Name: Dash
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 6df52dcb-b66e-42d6-8e77-10965a03841e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!114 &-4962748652797279881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,13 +105,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8ad293bda2c169a45aa386edec33211c, type: 2}
   - {fileID: 11400000, guid: 6a5e1cb5186b4ac4cb3ff848dce48118, type: 2}
   - {fileID: 11400000, guid: 9861e55048f65ff438ec0039db86f7c8, type: 2}
-  - {fileID: 11400000, guid: 03b7a05119867a649a18ca9f6fe98ae3, type: 2}
   - {fileID: 11400000, guid: 5b301f4391acfe64c861ffc1783eb7d8, type: 2}
   - {fileID: 11400000, guid: 7afbe19d25a696b4a9ad58d91d7a8898, type: 2}
   - {fileID: 11400000, guid: f17bb57aa8bc50b43b526bc8215f879f, type: 2}
   - {fileID: 11400000, guid: ae06f221582a16c4fa32204fa285d40f, type: 2}
   - {fileID: 11400000, guid: f5cf7a9b267f9ff48a8cfd1faba65351, type: 2}
   - {fileID: 11400000, guid: fe3279e49e5abda42b8bb42cd0ba9fa2, type: 2}
+  - {fileID: 11400000, guid: 1aa0cbd8ff3eb07458a148ff7c858bf1, type: 2}
+  - {fileID: 11400000, guid: e7f7b25f1ee2c2c4f806f9af9541a25b, type: 2}
+  - {fileID: 11400000, guid: 03b7a05119867a649a18ca9f6fe98ae3, type: 2}
   _modifiers: []
   _modifierDecorators: []
   _eventModifiers: []

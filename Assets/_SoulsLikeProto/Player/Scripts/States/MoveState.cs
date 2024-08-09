@@ -23,10 +23,13 @@ namespace SoulsLike
         BehaviorInputType _useItem;
         [SerializeField]
         BehaviorInputType _interact;
+        [SerializeField]
+        BehaviorInputType _parry;
 
         protected override void OnExit()
         {
             //throw new System.NotImplementedException();
+            Debug.Log(DataTags.GetTag<MovementDataTag>().Direction);
         }
 
 
@@ -59,6 +62,11 @@ namespace SoulsLike
                 Core.StateMachine.Transition(_block);
             }
         }
+        public override void OnParry()
+        {
+            Debug.Log("PARRY!!!");
+            Core.StateMachine.Transition(_parry);
+        }
         public override void OnUseItem()
         {
             Core.StateMachine.Transition(_useItem);
@@ -71,6 +79,7 @@ namespace SoulsLike
         private void Update()
         {
             UpdatePosition();
+           
             UpdateRotation();
             UpdateAnimator();
         }

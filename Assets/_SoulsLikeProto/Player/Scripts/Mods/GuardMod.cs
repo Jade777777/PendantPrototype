@@ -21,5 +21,9 @@ public class GuardMod : ModifierDecorator<DamageMod>
         {
             base.Begin();
         }
+        else
+        {
+            GetCore().DataTags.GetTag<CombatDataTag>().LastAttackBlockedTime = Time.time;
+        }
     }
 }

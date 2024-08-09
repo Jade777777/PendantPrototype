@@ -37,13 +37,10 @@ namespace SoulsLike
         {
             if (!IsActivated)
             {
-                Core.StateMachine.Transition(_dash);
-            }
-            else
-            {
                 Core.StateMachine.Transition(_move);
                 Debug.Log("STOPING DASH");
             }
+
         }
         public override void OnStandardAttack()
         {

@@ -1,8 +1,12 @@
 using Mosaic;
+using SoulsLike;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-namespace SoulsLike
-{
-    public class DodgeState : BaseSoulState
+
+
+namespace SoulsLike {
+    public class BackStepState : BaseSoulState
     {
 
         [SerializeField]
@@ -10,7 +14,7 @@ namespace SoulsLike
         [SerializeField]
         float _dodgeDistance = 3f;
 
-        [SerializeField] 
+        [SerializeField]
         BehaviorInputType _nextInput;
 
         Vector3 _startingPos;
@@ -18,13 +22,13 @@ namespace SoulsLike
         float _distance;
         protected override void OnEnter()
         {
-            
+
             base.OnEnter();
             Invoke(nameof(EndDash), _dodgeTime);
 
 
             _startingPos = transform.position;
-            _direction = DataTags.GetTag<MovementDataTag>().Direction;
+            _direction = -transform.forward;
             _distance = _dodgeDistance;
         }
         private void EndDash()
@@ -35,8 +39,8 @@ namespace SoulsLike
         { }
 
         public override void OnDash(bool IsActivated)
-        { 
-        
+        {
+
         }
 
         private void Update()
@@ -59,9 +63,5 @@ namespace SoulsLike
             animator.SetFloat("Velocity", Core.DataTags.GetTag<MovementDataTag>().Velocity.magnitude);
 
         }
-
-
-
-
     }
 }
